@@ -1,6 +1,6 @@
 # SwiftUI + Firebase boilerplate project
 
-This is repository is a template project with SwiftUI and Firebase. You can create an iOS with SwiftUI and Firebase right away! :rocket:
+This is a template project with SwiftUI and Firebase. You can create an iOS with SwiftUI and Firebase right away! :rocket:
 
 Integrated Firebase services are following
 - Firestore Database
@@ -28,12 +28,12 @@ This app has the following design.
 
 ## How to use
 
-Just fork the repository on GitHub and go "Create a new repository" page. You will find `swiftui-firebase-template` in the `Repository template` section! :smile:
+Just fork the repository on GitHub and go to "Create a new repository" page. You will find `swiftui-firebase-template` in the `Repository template` section! :smile:
 
 Then you have to set up a Firebase project.
 
 1. Create a new Firebase project
-2. Add `GoogleService-Info.plist` in the cloned project
+2. Add `GoogleService-Info.plist` in the new repository
 3. Start adding your own implementation
 
 ## License

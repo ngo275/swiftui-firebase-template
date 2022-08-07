@@ -1,6 +1,6 @@
 # SwiftUI + Firebase template project
 
-This is a template project with SwiftUI and Firebase. You can create an iOS with SwiftUI and Firebase right away! :rocket:
+This is a template project with SwiftUI and Firebase. You can create an iOS with SwiftUI and Firebase right away without spending time on backend development! :rocket:
 
 Integrated Firebase services are following
 - Firestore Database
@@ -9,7 +9,7 @@ Integrated Firebase services are following
 - Functions
 - Events
 
-## Folder structure
+## Features
 
 This app has the following design.
 
@@ -28,6 +28,28 @@ This app has the following design.
 
 - This project sets up necessary service classes in `ContentView.swift` through `environmentObject`. View files that need to access services simply declare `@EnvironmentObject`, like `@EnvironmentObject var postService: SamplePostService`.
 - `Views/Styles.swift` has a convenient view modifier called `.style(_)`. You can style Text like `Text("Hello world!").style(.header)`.
+- This project employs [Lottie](https://github.com/airbnb/lottie-ios) for rendering animations. Please refer `Views/Common/Lottie.swift`.
+- This project has integrated Firebase Authentication by default. You don't have to force users to explicitly sign up for using your app.
+- This project has integrated Firebase Firestore Database. The UI reflects the CRUD in real time. It is recommended to update the Firestore rules (see a following sample).
+- This project has integrated Firebase Events. Please refer `Utils/AnalyticsUtil.swift`. If you call `AnalyticsUtil.logEvent(.something)`, this event will be recorded in Firebase Analytics.
+
+
+Here is a sample of Firestore rule managed on Firebase Console. In this sample, `posts` has a user directory where only the owner can access. On the other hand, the second `something` is accessible for every logged-in users (anonymous login is fine).
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /posts/{userId}/{document=**} {
+      allow read, update, delete: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null;
+    }
+    match /something/{document=**} {
+      allow read: if request.auth != null;
+    }
+  }
+}
+```
 
 ## How to use
 

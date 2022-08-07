@@ -7,7 +7,7 @@ Integrated Firebase services are following
 - Firebase App Check
 - Authentication
 - Functions
-- Events
+- Analytics
 
 ## Features
 
@@ -28,10 +28,10 @@ This app has the following design.
 
 - This project sets up necessary service classes in `ContentView.swift` through `environmentObject`. View files that need to access services simply declare `@EnvironmentObject`, like `@EnvironmentObject var postService: SamplePostService`.
 - `Views/Styles.swift` has a convenient view modifier called `.style(_)`. You can style Text like `Text("Hello world!").style(.header)`.
-- This project employs [Lottie](https://github.com/airbnb/lottie-ios) for rendering animations. Please refer `Views/Common/Lottie.swift`.
-- This project has integrated Firebase Authentication by default. You don't have to force users to explicitly sign up for using your app.
-- This project has integrated Firebase Firestore Database. The UI reflects the CRUD in real time. It is recommended to update the Firestore rules (see a following sample).
-- This project has integrated Firebase Events. Please refer `Utils/AnalyticsUtil.swift`. If you call `AnalyticsUtil.logEvent(.something)`, this event will be recorded in Firebase Analytics.
+- This project employs [Lottie](https://github.com/airbnb/lottie-ios) for rendering animations. Please refer `Views/Common/LottieView.swift`.
+- This project has integrated [Firebase Authentication](https://firebase.google.com/docs/auth) by default. You don't have to force users to explicitly sign up for using your app.
+- This project has integrated [Firebase Firestore](https://firebase.google.com/docs/firestore). The UI of this project reflects the CRUD in real time. It is recommended to update the Firestore rules (see a following sample).
+- This project has integrated [Firebase Analytics](https://firebase.google.com/docs/analytics). Please refer `Utils/AnalyticsUtil.swift`. If you call `AnalyticsUtil.logEvent(.something)`, this event will be recorded in Firebase Analytics.
 
 
 Here is a sample of Firestore rule managed on Firebase Console. In this sample, `posts` has a user directory where only the owner can access. On the other hand, the second `something` is accessible for every logged-in users (anonymous login is fine).
@@ -60,6 +60,8 @@ Then you have to set up a Firebase project.
 1. Create a new Firebase project (Please enable Firebase Auth anonymous login and Firestore)
 2. Add `GoogleService-Info.plist` in the new repository
 3. Start adding your own implementation
+
+If you want to add some logic around database (Firestore), please refer to [this documentation](https://firebase.google.com/docs/functions)
 
 
 ## License

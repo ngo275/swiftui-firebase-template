@@ -57,9 +57,14 @@ Just fork the repository on GitHub and go to "Create a new repository" page. You
 
 Then you have to set up a Firebase project.
 
-1. Create a new Firebase project (Please enable Firebase Auth anonymous login and Firestore)
-2. Add `GoogleService-Info.plist` in the new repository
-3. Start adding your own implementation
+1. Clone your new repository to your local machine
+2. Create a new Firebase project (Please enable Firebase Auth anonymous login and Firestore)
+3. Add `GoogleService-Info.plist` in the new repository
+4. Start adding your own implementation
+
+If you see build errors, you may need to remove and re-add Swift Package dependencies.
+
+![img](docs/package.png)
 
 If you want to add some logic around database (Firestore), please refer to [this documentation](https://firebase.google.com/docs/functions)
 

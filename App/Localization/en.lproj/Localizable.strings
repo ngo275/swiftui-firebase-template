@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  App
+
+  Created by Shu on 2022/08/07.
+  
+*/
+
+"WTTitle1" = "Customize the app";
+"WTDesc11" = "This template provides";
+"WTDesc12" = "basic implemenataion!";
+"WTTitle2" = "Comprehensive features";
+"WTDesc21" = "This app has comprehensive";
+"WTDesc22" = "feature sets.";
+
+"AddTitle" = "Input title";
+"AddTitleDesc" = "Please input a title to register";
+"Cancel" = "Cancel";
+"Add" = "Add";
+

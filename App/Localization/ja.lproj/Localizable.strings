@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  App
+
+  Created by Shu on 2022/08/07.
+  
+*/
+
+"WTTitle1" = "アプリのカスタマイズ";
+"WTDesc11" = "このテンプレートは";
+"WTDesc12" = "基本機能を提供しています";
+"WTTitle2" = "幅広い機能のサポート";
+"WTDesc21" = "このアプリは幅広い";
+"WTDesc22" = "機能群を提供しています";
+
+

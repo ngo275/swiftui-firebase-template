@@ -1,0 +1,14 @@
+.idea
+.vscode
+
+**/GoogleService-Info.plist
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+

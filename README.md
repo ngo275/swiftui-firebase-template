@@ -9,9 +9,11 @@ Integrated Firebase services are following
 - Functions
 - Analytics
 
+This repository has implemented dark/light mode, too. The previous mode is cached in User defaults.
+
 ## Features
 
-This app has the following design.
+This app has the following code structure.
 
 ```
 .

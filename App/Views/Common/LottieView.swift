@@ -13,13 +13,13 @@ struct LottieView: UIViewRepresentable {
 
     var name: String
     var loopMode: LottieLoopMode = .playOnce
-    var animationView = AnimationView()
+    var animationView = LottieAnimationView()
     @Binding var playing: Bool
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView(frame: .zero)
         animationView.tag = tag
-        animationView.animation = Animation.named(name)
+        animationView.animation = LottieAnimation.named(name)
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopMode
 
@@ -36,9 +36,9 @@ struct LottieView: UIViewRepresentable {
 
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
         if playing {
-            (uiView.viewWithTag(tag) as! AnimationView).play()
+            (uiView.viewWithTag(tag) as! LottieAnimationView).play()
         } else {
-            (uiView.viewWithTag(tag) as! AnimationView).stop()
+            (uiView.viewWithTag(tag) as! LottieAnimationView).stop()
         }
     }
 }

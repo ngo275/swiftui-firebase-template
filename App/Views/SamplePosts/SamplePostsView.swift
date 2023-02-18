@@ -14,38 +14,57 @@ struct SamplePostsView: View {
     @State private var text = ""
     
     var body: some View {
-        VStack {
-            Button(action: {
-                showingAlert.toggle()
-            }) {
-                Text("Add").style(.actionButtonText)
-            }
+        ZStack {
+            Color.appBackground.ignoresSafeArea()
             
-            LazyVStack {
-                ForEach(postService.posts ?? []) { post in
-                    Text(post.title)
+            VStack {
+                
+                // Light/Dark mode
+                Button(action: {
+                    let currentTheme = AppSettings.shared.currentTheme
+                    AppSettings.shared.currentTheme = currentTheme == .light ? .dark : .light
+                }) {
+                    let currentTheme = AppSettings.shared.currentTheme
+                    Text(currentTheme == .light ? "🌤️" : "🌙")
+                        .style(.bigText)
                 }
+                .padding(16)
+                
+                // Write data to Firestore
+                Button(action: {
+                    showingAlert.toggle()
+                }) {
+                    Text("Add").style(.actionButtonText)
+                }
+                
+                // Render data loaded from Firestore
+                LazyVStack {
+                    ForEach(postService.posts ?? []) { post in
+                        Text(post.title)
+                    }
+                }
+                
+                TextFieldAlertView(
+                    text: $text,
+                    isShowingAlert: $showingAlert,
+                    placeholder: "",
+                    title: NSLocalizedString("AddTitle", comment: ""),
+                    message: NSLocalizedString("AddTitleDesc", comment: ""),
+                    leftButtonTitle: NSLocalizedString("Cancel", comment: ""),
+                    rightButtonTitle: NSLocalizedString("Add", comment: ""),
+                    leftButtonAction: {
+                        text = ""
+                    },
+                    rightButtonAction: {
+                        postService.add(title: text, message: "Test message")
+                        text = ""
+                    }
+                )
+                .frame(width: 0, height: 0)
+                
             }
-            
-            TextFieldAlertView(
-                        text: $text,
-                        isShowingAlert: $showingAlert,
-                        placeholder: "",
-                        title: NSLocalizedString("AddTitle", comment: ""),
-                        message: NSLocalizedString("AddTitleDesc", comment: ""),
-                        leftButtonTitle: NSLocalizedString("Cancel", comment: ""),
-                        rightButtonTitle: NSLocalizedString("Add", comment: ""),
-                        leftButtonAction: {
-                            text = ""
-                        },
-                        rightButtonAction: {
-                            postService.add(title: text, message: "Test message")
-                            text = ""
-                        }
-                    )
-            .frame(width: 0, height: 0)
-
         }
+        
     }
 }
 

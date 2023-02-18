@@ -42,6 +42,10 @@ class SamplePostService: ObservableObject {
     
     func add(title: String, message: String) {
         let newPost = SamplePost(title: title, message: message)
+        // Add data to Firestore
         repository.add(post: newPost)
+        
+        // You can send log event
+        AnalyticsUtil.logEvent(.addItem, params: nil)
     }
 }

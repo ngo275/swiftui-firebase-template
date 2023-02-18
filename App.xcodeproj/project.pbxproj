@@ -57,6 +57,7 @@
 		25B40742289F547B00924A8B /* SamplePostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B40741289F547B00924A8B /* SamplePostRepository.swift */; };
 		25B40745289F553400924A8B /* SamplePostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B40744289F553400924A8B /* SamplePostsView.swift */; };
 		25B40747289F55A300924A8B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B40746289F55A300924A8B /* MainView.swift */; };
+		25ED7BBA29A0AB8E00F9DAA1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ED7BB929A0AB8E00F9DAA1 /* AppSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		25B40741289F547B00924A8B /* SamplePostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePostRepository.swift; sourceTree = "<group>"; };
 		25B40744289F553400924A8B /* SamplePostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePostsView.swift; sourceTree = "<group>"; };
 		25B40746289F55A300924A8B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		25ED7BB929A0AB8E00F9DAA1 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				25B40705289F3A1A00924A8B /* Errors.swift */,
 				25B40707289F3A4600924A8B /* NavigationUtil.swift */,
 				25B4073D289F51CA00924A8B /* AnalyticsUtil.swift */,
+				25ED7BB929A0AB8E00F9DAA1 /* AppSettings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				25B406CD289F2D0800924A8B /* AppApp.swift in Sources */,
 				25B406F2289F36F000924A8B /* WebView.swift in Sources */,
 				25B40708289F3A4600924A8B /* NavigationUtil.swift in Sources */,
+				25ED7BBA29A0AB8E00F9DAA1 /* AppSettings.swift in Sources */,
 				25B40742289F547B00924A8B /* SamplePostRepository.swift in Sources */,
 				25B406FD289F38BE00924A8B /* PageViewController.swift in Sources */,
 				25B40704289F39D400924A8B /* Constants.swift in Sources */,
@@ -610,16 +614,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 		25B40716289F4E7B00924A8B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

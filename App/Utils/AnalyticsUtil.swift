@@ -22,6 +22,7 @@ struct AnalyticsUtil {
     
     enum EventType: String {
         case onboarded
+        case addItem
     }
     
     static func logEvent(_ event: EventType, params: Params? = nil) {

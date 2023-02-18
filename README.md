@@ -66,6 +66,12 @@ Then you have to set up a Firebase project.
 
 If you see build errors, you may need to remove and re-add Swift Package dependencies.
 
+Here are dependencies:
+- [Lottie](https://github.com/airbnb/lottie-ios) version 4.x.y
+  - To render animcation easily.
+- [Firebase](https://github.com/firebase/firebase-ios-sdk) version 10.x.y
+  - To handle Firebase services.
+
 ![img](docs/package.png)
 
 If you want to add some logic around database (Firestore), please refer to [this documentation](https://firebase.google.com/docs/functions)
